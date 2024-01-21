@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manager/widgets/booking_calendar.dart';
 
 class Meets extends StatefulWidget {
   final Function(String) onNavigate;
@@ -7,13 +8,33 @@ class Meets extends StatefulWidget {
 
   @override
   State<Meets> createState() => _MeetsState();
-
 }
 
-class _MeetsState extends State<Meets>{
+class _MeetsState extends State<Meets> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: BookingCalendar(),
+    );
   }
-
 }
+
+/*class _MeetsState extends State<Meets> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              child: Text("Fecha"),
+              color: Colors.blueAccent,
+            )
+          ],
+        ),
+        Row(children: [Row()])
+      ],
+    );
+  }
+}*/

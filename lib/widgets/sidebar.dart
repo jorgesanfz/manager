@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Sidebar extends StatelessWidget {
+  final Function(String) onNavigate;
+
+  Sidebar({required this.onNavigate});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -23,12 +27,14 @@ class Sidebar extends StatelessWidget {
             title: Text('Meets'),
             onTap: () {
               // Handle navigation to Home screen
+              onNavigate('/meets');
               Navigator.pop(context); // Close the drawer
             },
           ),
           ListTile(
             title: Text('Settings'),
             onTap: () {
+              onNavigate('/settings');
               // Handle navigation to Details screen
               Navigator.pop(context); // Close the drawer
             },

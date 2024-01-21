@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> {
     }
     return Scaffold(
         appBar: AppBar(),
-        drawer: Sidebar(),
+        drawer: Sidebar(onNavigate: _navigateTo),
         body: currentWidget
     );
   }
