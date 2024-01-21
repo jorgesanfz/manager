@@ -17,7 +17,8 @@ class _DatePickerBodyState extends State<DatePickerBody> {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Container(
-            width: MediaQuery.of(context).size.width / 3,
+            //width: MediaQuery.of(context).size.width / 3,
+            width: 400,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black, // Border color

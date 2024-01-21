@@ -13,7 +13,10 @@ class DatePickerHeader extends StatefulWidget {
 class _DatePickerHeaderState extends State<DatePickerHeader> {
   @override
   Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.center,
+    return SizedBox(
+      width: 400,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(
             onPressed: () {
@@ -29,6 +32,7 @@ class _DatePickerHeaderState extends State<DatePickerHeader> {
             child: Text('>'),
           ),
         ],
+      ),
     );
   }
 }
