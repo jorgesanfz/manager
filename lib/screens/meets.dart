@@ -14,7 +14,7 @@ class _MeetsState extends State<Meets> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 600,
+      height: MediaQuery.of(context).size.height,
       margin: EdgeInsets.all(10),
       child: BookingCalendar(),
     );
