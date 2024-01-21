@@ -14,6 +14,8 @@ class _MeetsState extends State<Meets> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 600,
+      margin: EdgeInsets.all(10),
       child: BookingCalendar(),
     );
   }

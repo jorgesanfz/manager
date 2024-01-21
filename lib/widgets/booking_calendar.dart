@@ -7,8 +7,12 @@ class BookingCalendar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [DatePicker(), DayView()],
-    );
+    return Column(children: [DatePicker(), DayView()],
+      /*Expanded(
+          child: Container(
+        color: CupertinoColors.black,
+      ))
+    ]*/
+        );
   }
 }

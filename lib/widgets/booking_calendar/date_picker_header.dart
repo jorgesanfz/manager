@@ -13,8 +13,7 @@ class DatePickerHeader extends StatefulWidget {
 class _DatePickerHeaderState extends State<DatePickerHeader> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
+    return Row(mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(
             onPressed: () {
@@ -22,7 +21,7 @@ class _DatePickerHeaderState extends State<DatePickerHeader> {
             },
             child: Text('<'),
           ),
-          Text("Date"),
+          Text("Week"),
           TextButton(
             onPressed: () {
               //
@@ -30,7 +29,6 @@ class _DatePickerHeaderState extends State<DatePickerHeader> {
             child: Text('>'),
           ),
         ],
-      ),
     );
   }
 }
