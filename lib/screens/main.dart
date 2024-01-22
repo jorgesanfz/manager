@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:manager/layouts/abstract/column_of_rows.dart';
-import 'package:manager/screens/settings.dart';
+// import 'package:manager/screens/settings.dart';
 import 'package:manager/widgets/console/console.dart';
 
 import '../widgets/sidebar.dart';
