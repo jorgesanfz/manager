@@ -10,7 +10,7 @@ class Day {
   final List<Worker> workers;
 
 
-  Day(this.open, this.slots, this.workers, this.hours = initHours(open, close), {
+  Day(this.open, this.slots, this.workers, this.hours, {
     required this.close
   })
 
