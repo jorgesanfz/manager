@@ -8,7 +8,7 @@ class DayView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<String> workers = ["Eva", "Laura", "Irene"];
+    List<String> workers = ["Eva", "Laura", "Irene","pedro", "perico", "juanan"];
     List<String> dayHours = [
       "8",
       "9",
@@ -24,45 +24,49 @@ class DayView extends ConsumerWidget {
     ];
 
     return Container(
+      height: 280,
       margin: EdgeInsets.only(top: 50),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey, width: 1),
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
-      width: MediaQuery
-          .of(context)
-          .size
-          .width / 1.25,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          for (int i = 0; i < workers.length; i++)
-            IntrinsicHeight(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    width: 120,
-                    margin: EdgeInsets.only(bottom: 25, top: 25),
-                    child: Center(child: Text(workers[i])),
-                  ),
-                  const VerticalDivider(color: Colors.grey, thickness: 1),
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.all(5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          for (int j = 0; j < dayHours.length; j++)
-                            HourButton(dayHours: dayHours, index: j, contextParent: context,),
-                        ],
+      width: MediaQuery.of(context).size.width / 1.25,
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            for (int i = 0; i < workers.length; i++)
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      width: 120,
+                      margin: EdgeInsets.only(bottom: 25, top: 25),
+                      child: Center(child: Text(workers[i])),
+                    ),
+                    const VerticalDivider(color: Colors.grey, thickness: 1),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsets.all(5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            for (int j = 0; j < dayHours.length; j++)
+                              HourButton(
+                                dayHours: dayHours,
+                                index: j,
+                                contextParent: context,
+                              ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -73,24 +77,25 @@ class HourButton extends ConsumerWidget {
   final int index;
   final BuildContext contextParent;
 
-  const HourButton({required this.dayHours, required this.index, required this.contextParent});
+  const HourButton(
+      {required this.dayHours,
+      required this.index,
+      required this.contextParent});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Expanded(
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(
-              color: index % 2 == 0 ? Colors.green : Colors.red),
+          border: Border.all(color: index % 2 == 0 ? Colors.green : Colors.red),
           borderRadius: index == 0
               ? const BorderRadius.only(
-              topLeft: Radius.circular(20),
-              bottomLeft: Radius.circular(20))
+                  topLeft: Radius.circular(20), bottomLeft: Radius.circular(20))
               : index == dayHours.length - 1
-              ? const BorderRadius.only(
-              topRight: Radius.circular(20),
-              bottomRight: Radius.circular(20))
-              : null,
+                  ? const BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      bottomRight: Radius.circular(20))
+                  : null,
         ),
         height: 30,
         margin: EdgeInsets.all(1),
@@ -109,7 +114,6 @@ class HourButton extends ConsumerWidget {
               // You can also add a message to the console provider
               ref.read(consoleProvider).addMessage('Appointment scheduled: ');
             },
-
           ),
         ),
       ),
@@ -121,10 +125,11 @@ void _showDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-        return Container(
-         padding: EdgeInsets.all(140),
-            child: Dialog(
-          child: HairSalonAppointmentForm(),),
+      return Container(
+        padding: EdgeInsets.all(140),
+        child: Dialog(
+          child: HairSalonAppointmentForm(),
+        ),
       );
     },
   );
