@@ -24,7 +24,7 @@ class _DatePickerHeaderState extends State<DatePickerHeader> {
             },
             child: Text('<'),
           ),
-          Text("Week"),
+          Text("Month"),
           TextButton(
             onPressed: () {
               //

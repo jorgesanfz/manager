@@ -10,7 +10,7 @@ class BookingCalendar extends StatelessWidget {
     return Column(
       children: [
         Expanded(flex: 1, child: DatePicker()),
-        Expanded(flex: 4, child: DayView()),
+        Expanded(flex: 2, child: DayView()),
       ],
       /*Expanded(
           child: Container(

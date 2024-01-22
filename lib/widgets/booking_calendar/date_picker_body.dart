@@ -17,8 +17,7 @@ class _DatePickerBodyState extends State<DatePickerBody> {
       child: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Container(
-            //width: MediaQuery.of(context).size.width / 3,
-            width: 400,
+            width: MediaQuery.of(context).size.width / 6,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.black, // Border color
@@ -31,21 +30,23 @@ class _DatePickerBodyState extends State<DatePickerBody> {
                 shrinkWrap: true,
                 crossAxisCount: 7,
                 children: List.generate(
-                  7,
+                  30,
                       (index) {
+                    var day = index+1;
                     return Center(
                       child: Container(
                         constraints: const BoxConstraints.expand(),
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Colors.black, // Border color
-                            width: 1.0, // Border width
+                            color: Colors.grey, // Border color
+                            width: 0.5, // Border width
                           ),
                         ),
                         child: Center(
                           child: Text(
-                            '$index',
-                            style: Theme.of(context).textTheme.headlineSmall,
+                            '$day',
+                            //style: Theme.of(context).textTheme.headlineSmall,
+                            style: TextStyle(fontSize: 16),
                           ),
                         ),
                       ),
