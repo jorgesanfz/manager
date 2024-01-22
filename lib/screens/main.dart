@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manager/layouts/abstract/column_of_rows.dart';
 import 'package:manager/screens/settings.dart';
+import 'package:manager/widgets/console/console.dart';
 
 import '../widgets/sidebar.dart';
 import 'meets.dart';
@@ -33,7 +34,8 @@ class _MainPageState extends State<MainPage> {
         currentWidget = Meets(onNavigate: _navigateTo);
         break;
       case '/settings':
-        currentWidget = Settings(onNavigate: _navigateTo);
+        currentWidget = ConsoleWidget();
+            //Settings(onNavigate: _navigateTo);
         break;
       default:
         currentWidget = Container(); // Handle unknown route
@@ -41,7 +43,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
         appBar: AppBar(),
         drawer: Sidebar(onNavigate: _navigateTo),
-        body: currentWidget
+        body: currentWidget,
     );
   }
 }
