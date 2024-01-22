@@ -52,40 +52,10 @@ class _HairSalonAppointmentFormState extends State<HairSalonAppointmentForm> {
                   return null;
                 },
               ),
-              SizedBox(height: 16),
-              TextFormField(
-                controller: dateController,
-                keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(
-                  labelText: 'Appointment Date',
-                  icon: Icon(Icons.calendar_today),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter the appointment date';
-                  }
-                  return null;
-                },
-              ),
-              SizedBox(height: 16),
-              TextFormField(
-                controller: timeController,
-                keyboardType: TextInputType.datetime,
-                decoration: InputDecoration(
-                  labelText: 'Appointment Time',
-                  icon: Icon(Icons.access_time),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter the appointment time';
-                  }
-                  return null;
-                },
-              ),
               SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () {
-                  if (Form.of(context)!.validate()) {
+                  if (Form.of(context).validate()) {
                     // Submit the form data
                     // You can add your logic here, like saving the appointment details
                     // or navigating to another screen

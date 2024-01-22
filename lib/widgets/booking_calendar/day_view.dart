@@ -122,7 +122,7 @@ void _showDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
         return Container(
-         padding: EdgeInsets.all(50), 
+         padding: EdgeInsets.all(140),
             child: Dialog(
           child: HairSalonAppointmentForm(),),
       );
