@@ -3,7 +3,7 @@ class Worker {
   final String name;
   final int phone;
 
-  Worker(this.id, this.name, this.phone)
+  Worker(this.id, this.name, this.phone);
 
   @override
   String toString() {

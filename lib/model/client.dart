@@ -4,7 +4,7 @@ class Client {
   final String surname;
   final int phone;
 
-  Client(this.id, this.name, this.phone, this.surname)
+  Client(this.id, this.name, this.phone, this.surname);
 
   @override
   String toString() {

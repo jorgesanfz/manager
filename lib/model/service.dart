@@ -3,7 +3,7 @@ class Service {
   final String name;
   final int price;
 
-  Service(this.id, this.name, this.price)
+  Service(this.id, this.name, this.price);
 
   @override
   String toString() {

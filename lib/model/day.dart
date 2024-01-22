@@ -12,7 +12,7 @@ class Day {
 
   Day(this.open, this.slots, this.workers, this.hours, {
     required this.close
-  })
+  });
 
   void initHours(beginningHour, endingHour) {
     int totalHours = endingHour - beginningHour;

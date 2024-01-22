@@ -11,7 +11,7 @@ class Meet {
   final Service service;
 
   Meet(this.timestamp,
-      {required this.worker, required this.client, required this.service})
+      {required this.worker, required this.client, required this.service});
 
   @override
   String toString() {
