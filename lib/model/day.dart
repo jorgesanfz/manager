@@ -1,4 +1,3 @@
-import 'package:manager/model/meet.dart';
 import 'package:manager/model/worker.dart';
 
 class Day {
