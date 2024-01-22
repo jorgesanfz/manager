@@ -29,10 +29,12 @@ class _DatePickerBodyState extends State<DatePickerBody> {
               child: GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 7,
-                children: List.generate(
-                  30,
+                children: List.generate(growable: true,
+                  35,
                       (index) {
                     var day = index+1;
+                    // posiciones dias en base a dia semana
+                    if(day > 31) return Container();
                     return Center(
                       child: Container(
                         constraints: const BoxConstraints.expand(),
