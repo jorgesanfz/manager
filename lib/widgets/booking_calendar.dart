@@ -8,29 +8,25 @@ class BookingCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget profile = Expanded(
-        child: Container(
-      //color: Colors.red,
-      child: Icon(Icons.person_rounded, size: 150),
-    ));
+      child: Container(
+        //color: Colors.red,
+        child: Icon(Icons.person_rounded, size: 150),
+      ),
+    );
     Widget info = Expanded(
-      child: Center(
         child: Container(
-          color: Colors.blueGrey,
           height: 160,
           width: 200,
-          child: Center(
-            child: ListView(padding: EdgeInsets.symmetric(horizontal: 100),
+          child: Icon(Icons.sell_rounded, size: 150),
+          /*child: Center(
+            child: ListView(
+              padding: EdgeInsets.symmetric(horizontal: 100),
               children: [
                 Text("1"),
                 Text("2"),
-                Text("2"),
-                Text("2"),
-                Text("2"),
-                Text("2"),
               ],
             ),
-          ),
-        ),
+          ),*/
       ),
     );
 
@@ -41,7 +37,7 @@ class BookingCalendar extends StatelessWidget {
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [info, DatePicker(), profile]),
-        DayView(), //expanded
+        Expanded(child: DayView()), //expanded
       ],
       /*Expanded(
           child: Container(

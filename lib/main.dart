@@ -1,6 +1,7 @@
 // import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:manager/screens/main.dart';
 import 'package:manager/utils/themes.dart';
 
@@ -23,11 +24,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: MainTheme.getThemeData(),
-      //home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const MainPage(),
+    return ScreenUtilInit(
+      designSize: const Size(1080, 720),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp(
+          title: 'Flutter Demo',
+          theme: MainTheme.getThemeData(),
+          //home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          home: const MainPage(),
+        );
+      },
     );
   }
 }

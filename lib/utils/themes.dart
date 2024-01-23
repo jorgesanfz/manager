@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MainTheme extends Theme {
   const MainTheme({super.key, required super.data, required super.child});
@@ -28,7 +30,15 @@ class MainTheme extends Theme {
       //
       // This works for code too, not just values: Most code changes can be
       // tested with just a hot reload.
-      colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+      textTheme: TextTheme(
+        bodyMedium: GoogleFonts.roboto(fontSize: 15).apply(fontSizeFactor: 1.sp)
+      ),
+      /*
+      iconTheme: IconThemeData(
+        size: 10.sp
+      ),
+       */
       useMaterial3: true,
     );
   }

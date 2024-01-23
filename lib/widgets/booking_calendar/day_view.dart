@@ -24,8 +24,8 @@ class DayView extends ConsumerWidget {
     ];
 
     return Container(
-      height: 280,
-      margin: EdgeInsets.only(top: 50),
+      height: MediaQuery.of(context).size.height / 2,
+      margin: EdgeInsets.only(top: 50, bottom: 50),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey, width: 1),
         borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -41,7 +41,8 @@ class DayView extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      width: 120,
+                      width: MediaQuery.of(context).size.width / 10,
+                      //height: MediaQuery.of(context).size.height / 50,
                       margin: EdgeInsets.only(bottom: 25, top: 25),
                       child: Center(child: Text(workers[i])),
                     ),
