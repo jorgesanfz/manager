@@ -1,3 +1,6 @@
+import 'package:sqflite/sqflite.dart';
+
+import '../services/database.dart';
 import 'meet.dart';
 
 enum HourStatus { out, free, full }
@@ -35,5 +38,23 @@ class HourEntry {
 
   String toTimestamp(){
     return '';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'timestamp': timestamp,
+      'hour': hour,
+      'halfHour': halfHour ? 1 : 0,
+      'meet': meet.toMap(),
+    };
+  }
+
+  Future<void> insertDay(HourEntry hour) async {
+    final db = DatabaseController().database;
+
+    await db.insert(
+      'hourentrys', hour.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 }

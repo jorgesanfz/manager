@@ -1,4 +1,8 @@
 import 'package:manager/models/worker.dart';
+import 'package:sqflite/sqflite.dart';
+
+import '../main.dart';
+import '../services/database.dart';
 
 class Day {
   final String open;
@@ -32,5 +36,24 @@ class Day {
     int halfHourUnits = totalHours * 2;
 
     hours = halfHourUnits;
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'open': open,
+      'close': close,
+      'hours': hours,
+      'slots': slots,
+      'workers': workers,
+    };
+  }
+
+  Future<void> insertDay(Day day) async {
+    final db = DatabaseController().database;
+
+    await db.insert(
+      'days', day.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 }

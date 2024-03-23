@@ -10,6 +10,14 @@ class Service {
         name = '',
         price = 0;
 
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'price': price,
+    };
+  }
+
   @override
   String toString() {
     return '$id, $name, $price';

@@ -1,3 +1,6 @@
+import 'package:manager/services/database.dart';
+import 'package:sqflite/sqflite.dart';
+
 class Client {
   final int id;
   final String name;
@@ -12,15 +15,25 @@ class Client {
         surname = '',
         phone = 0;
 
-  Map<String, dynamic> toJson() => {
-    'id': id,
-    'name': name,
-    'surname': surname,
-    'phone': phone,
-  };
+  Map<String, dynamic> toMap() =>
+      {
+        'id': id,
+        'name': name,
+        'surname': surname,
+        'phone': phone,
+      };
 
   @override
   String toString() {
     return '$id, $name, $phone';
+  }
+
+  Future<void> insertClient(Client client) async {
+    final db = DatabaseController().database;
+
+    await db.insert(
+      'clients', client.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 }

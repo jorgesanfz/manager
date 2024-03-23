@@ -19,6 +19,15 @@ class Meet {
         service = Service.empty(),
         timestamp = '';
 
+  Map<String, dynamic> toMap() {
+    return {
+      'worker': worker.toMap(),
+      'client': client.toMap(),
+      'service': service.toMap(),
+      'timestamp': timestamp,
+    };
+  }
+
   @override
   String toString() {
     return '$worker, $client, $service';
