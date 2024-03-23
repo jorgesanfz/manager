@@ -1,17 +1,22 @@
-import 'package:manager/model/worker.dart';
+import 'package:manager/models/worker.dart';
 
 class Day {
   final String open;
   final String close;
   late final int hours;
   final List<Map<int, Worker>> slots;
+
   //final Map<int, Worker> workerDay;
   final List<Worker> workers;
 
+  Day(this.open, this.slots, this.workers, this.hours, {required this.close});
 
-  Day(this.open, this.slots, this.workers, this.hours, {
-    required this.close
-  });
+  Day.empty()
+      : open = '',
+        close = '',
+        slots = [],
+        workers = [],
+        hours = 0;
 
   void initHours(beginningHour, endingHour) {
     int totalHours = endingHour - beginningHour;
@@ -23,9 +28,9 @@ class Day {
   void initSlots(beginningHour, endingHour) {
     // Recuperar trabajadores del dia
     // crear un Map<int, worker> por worker
-  int totalHours = endingHour - beginningHour;
-  int halfHourUnits = totalHours * 2;
+    int totalHours = endingHour - beginningHour;
+    int halfHourUnits = totalHours * 2;
 
-  hours = halfHourUnits;
+    hours = halfHourUnits;
   }
 }

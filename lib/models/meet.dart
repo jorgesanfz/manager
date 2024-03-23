@@ -1,8 +1,8 @@
 
 
-import 'package:manager/model/client.dart';
-import 'package:manager/model/service.dart';
-import 'package:manager/model/worker.dart';
+import 'package:manager/models/client.dart';
+import 'package:manager/models/service.dart';
+import 'package:manager/models/worker.dart';
 
 class Meet {
   final Worker worker;
@@ -12,6 +12,12 @@ class Meet {
 
   Meet(this.timestamp,
       {required this.worker, required this.client, required this.service});
+
+  Meet.empty()
+      : worker = Worker.empty(),
+        client = Client.empty(),
+        service = Service.empty(),
+        timestamp = '';
 
   @override
   String toString() {

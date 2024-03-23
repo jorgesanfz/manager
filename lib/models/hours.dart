@@ -14,6 +14,12 @@ class HourEntry {
       required this.halfHour,
       required this.meet});
 
+  HourEntry.empty():
+    timestamp = '',
+    hour = 0,
+    halfHour = false,
+    meet = Meet.empty();
+
   @override
   String toString() {
     return 'ID: $timestamp, Hour: $fullHour(), Meet: $meet';
